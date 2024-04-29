@@ -1,7 +1,14 @@
 public class Game {
 
-    public void guess(String guessNumber) {
+    public String question;
+
+    public GuessResult guess(String guessNumber) {
         assertIllegalArgument(guessNumber);
+
+        if(guessNumber.equals(this.question)) {
+            return new GuessResult(true, 3, 0);
+        }
+        return null;
     }
 
     private void assertIllegalArgument(String guessNumber) {
