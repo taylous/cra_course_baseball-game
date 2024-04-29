@@ -10,12 +10,16 @@ public class Game {
         }
         else {
             int strikes = 0;
+            int balls = 0 ;
             for(int i = 0; i < this.question.length(); i += 1) {
                 if(this.question.indexOf(guessNumber.charAt(i)) == i) {
                     strikes += 1;
                 }
+                else if(this.question.indexOf(guessNumber.charAt(i)) > -1) {
+                    balls += 1;
+                }
             }
-            return new GuessResult(false, strikes,0);
+            return new GuessResult(false, strikes, balls);
         }
     }
 
