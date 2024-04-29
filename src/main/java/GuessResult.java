@@ -8,4 +8,16 @@ public class GuessResult {
         this.strikes = strikes;
         this.balls = balls;
     }
+
+    public boolean isSolved() {
+        return solved;
+    }
+
+    public int getStrikes() {
+        return strikes;
+    }
+
+    public int getBalls() {
+        return balls;
+    }
 }
