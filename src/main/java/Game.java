@@ -2,10 +2,14 @@ public class Game {
 
     public String question;
 
+    private boolean isSolved(String guessNumber) {
+        return guessNumber.equals(this.question);
+    }
+
     public GuessResult guess(String guessNumber) {
         assertIllegalArgument(guessNumber);
 
-        if(guessNumber.equals(this.question)) {
+        if(isSolved(this.question)) {
             return new GuessResult(true, 3, 0);
         }
         else {
