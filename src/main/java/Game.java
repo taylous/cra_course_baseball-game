@@ -1,6 +1,10 @@
 public class Game {
 
     public void guess(String guessNumber) {
+        assertIllegalArgument(guessNumber);
+    }
+
+    private void assertIllegalArgument(String guessNumber) {
         if (guessNumber == null) {
             throw new IllegalArgumentException();
         }
