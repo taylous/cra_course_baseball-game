@@ -11,9 +11,7 @@ public class Game {
         else {
             int strikes = 0;
             for(int i = 0; i < this.question.length(); i += 1) {
-                int findIndex = this.question.indexOf(guessNumber.charAt(i));
-
-                if(i == findIndex) {
+                if(this.question.indexOf(guessNumber.charAt(i)) == i) {
                     strikes += 1;
                 }
             }
