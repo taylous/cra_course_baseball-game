@@ -10,7 +10,7 @@ public class Game {
         assertIllegalArgument(guessNumber);
 
         if(isSolved(this.question)) {
-            return new GuessResult(true, 3, 0);
+            return getGuessResult();
         }
         else {
             int strikes = 0;
@@ -25,6 +25,10 @@ public class Game {
             }
             return new GuessResult(false, strikes, balls);
         }
+    }
+
+    private GuessResult getGuessResult() {
+        return new GuessResult(true, 3, 0);
     }
 
     private void assertIllegalArgument(String guessNumber) {
