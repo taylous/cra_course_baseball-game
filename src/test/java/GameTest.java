@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 class GameTest {
 
@@ -39,15 +38,19 @@ class GameTest {
         assertIllegalArgument("121");
     }
 
+    private void generateQuestion(String questionNumber) {
+        game.question = questionNumber;
+    }
+
     @Test
     void returnSolvedResultIfMatchedNumber() {
-        game.question = "123";
+        generateQuestion("123");
         assertMatchedNumber(game.guess("123"), true, 3, 0);
     }
 
     @Test
     void returnSolvedResultIfUnMatchedNumber() {
-        game.question = "123";
+        generateQuestion("123");
         assertMatchedNumber(game.guess("456"), false, 0, 0);
     }
 
