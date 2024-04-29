@@ -1,0 +1,2 @@
+# CRA COURSE Baseball KATA
+
