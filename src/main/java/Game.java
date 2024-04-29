@@ -9,7 +9,7 @@ public class Game {
     public GuessResult guess(String guessNumber) {
         assertIllegalArgument(guessNumber);
 
-        if(isSolved(this.question)) {
+        if(isSolved(guessNumber)) {
             return getGuessResult();
         }
         else {
@@ -20,6 +20,7 @@ public class Game {
     private GuessResult createUnResolvedResult(String guessNumber) {
         int strikes = 0;
         int balls = 0 ;
+
         for(int i = 0; i < this.question.length(); i += 1) {
             if(this.question.indexOf(guessNumber.charAt(i)) == i) {
                 strikes += 1;
