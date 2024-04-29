@@ -1,7 +1,7 @@
 public class GuessResult {
-    public boolean solved;
-    public int strikes;
-    public int balls;
+    private boolean solved;
+    private int strikes;
+    private int balls;
 
     public GuessResult(boolean solved, int strikes, int balls) {
         this.solved = solved;
