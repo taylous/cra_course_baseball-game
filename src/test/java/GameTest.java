@@ -23,4 +23,11 @@ class GameTest {
             game.guess(null);
         });
     }
+
+    @Test
+    void throwExceptionWhenInputLengthIsUnmatched() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            this.game.guess("12");
+        });
+    }
 }
