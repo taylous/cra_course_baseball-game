@@ -28,8 +28,9 @@ class GameTest {
 
     @Test
     void throwExceptionWhenInputLengthIsUnmatched() {
+        String guessNumber = "12";
         try {
-            this.game.guess("12");
+            this.game.guess(guessNumber);
         } catch (IllegalArgumentException e) {
 
         }
