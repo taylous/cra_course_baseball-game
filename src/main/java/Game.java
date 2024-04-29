@@ -8,7 +8,17 @@ public class Game {
         if(guessNumber.equals(this.question)) {
             return new GuessResult(true, 3, 0);
         }
-        return new GuessResult(false, 0 , 0);
+        else {
+            int strikes = 0;
+            for(int i = 0; i < this.question.length(); i += 1) {
+                int findIndex = this.question.indexOf(guessNumber.charAt(i));
+
+                if(i == findIndex) {
+                    strikes += 1;
+                }
+            }
+            return new GuessResult(false, strikes,0);
+        }
     }
 
     private void assertIllegalArgument(String guessNumber) {
