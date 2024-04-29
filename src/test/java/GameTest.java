@@ -20,6 +20,8 @@ class GameTest {
     private void assertIllegalArgument(String guessNumber) {
         try {
             this.game.guess(guessNumber);
+            fail();
+
         } catch (IllegalArgumentException e) {
 
         }
@@ -30,5 +32,6 @@ class GameTest {
         assertIllegalArgument(null);
         assertIllegalArgument("12");
         assertIllegalArgument("1234");
+        assertIllegalArgument("12s");
     }
 }
